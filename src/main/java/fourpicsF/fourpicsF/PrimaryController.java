@@ -20,13 +20,14 @@ public class PrimaryController {
     private Button startBtn;
 
     @FXML
+    private Button exitBtn;
+    @FXML
     void startGame(ActionEvent event) throws IOException {
         System.out.println(System.getProperty("user.dir"));
         App.setRoot("secondary");
     }
 
-    @FXML
-    private Button exitBtn;
+
 
     @FXML
     void exitGame(ActionEvent event) {

@@ -18,9 +18,11 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.paint.Color;
 
 public class SecondaryController /*implements Initializable*/ {
@@ -40,11 +42,22 @@ public class SecondaryController /*implements Initializable*/ {
 
 
     @FXML
-    private ImageView image1;
+    private ResourceBundle resources;
+
+    @FXML
+    private URL location;
+
+    @FXML
+    private ScrollPane scroll;
+
+    @FXML
+    private AnchorPane Anchor;
 
     @FXML
     private Label status;
 
+    @FXML
+    private ImageView image1;
 
     @FXML
     private ImageView image2;
@@ -97,12 +110,16 @@ public class SecondaryController /*implements Initializable*/ {
 
     @FXML
     void initialize() throws FileNotFoundException {
+        assert scroll != null : "fx:id=\"scroll\" was not injected: check your FXML file 'secondary.fxml'.";
+        assert Anchor != null : "fx:id=\"Anchor\" was not injected: check your FXML file 'secondary.fxml'.";
+        assert status != null : "fx:id=\"status\" was not injected: check your FXML file 'secondary.fxml'.";
         assert image1 != null : "fx:id=\"image1\" was not injected: check your FXML file 'secondary.fxml'.";
         assert image2 != null : "fx:id=\"image2\" was not injected: check your FXML file 'secondary.fxml'.";
         assert image3 != null : "fx:id=\"image3\" was not injected: check your FXML file 'secondary.fxml'.";
         assert image4 != null : "fx:id=\"image4\" was not injected: check your FXML file 'secondary.fxml'.";
         assert prevBtrn != null : "fx:id=\"prevBtrn\" was not injected: check your FXML file 'secondary.fxml'.";
         assert nextBtn != null : "fx:id=\"nextBtn\" was not injected: check your FXML file 'secondary.fxml'.";
+        assert qNum != null : "fx:id=\"qNum\" was not injected: check your FXML file 'secondary.fxml'.";
         assert sound != null : "fx:id=\"sound\" was not injected: check your FXML file 'secondary.fxml'.";
         InputStream stream=new FileInputStream(System.getProperty("user.dir")+"/src/main/resources/pics/sound.jpg");
         Image img=new Image(stream);
